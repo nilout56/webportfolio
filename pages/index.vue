@@ -1,6 +1,6 @@
 <template>
   <v-row class="d-flex justify-center mt-4">
-    <v-container fluid>
+    <v-container fluid class="mt-4 mb-8">
       <v-row class="pa-6">
         <v-col cols="12" sm="8">
           <h1>Nilout Blog</h1>
@@ -30,21 +30,28 @@
         style="height: 50vh"
         dense
         elevation="0"
+        class="mb-12"
       >
-        <v-col
+        <v-parallax
+          dark
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgICAgHBwgIBwcHBwoHBwcHBw8ICQcKFREWFhURExMYHSggGCYlJxMfITEhJSkrOi46Fx8zODMsNygtLisBCgoKDg0NDw0NDysZFRk3Kzc3Ky0rLSstKy0tKystKysrKy03KysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAIEBhQMBIgACEQEDEQH/xAAbAAEBAQEBAQEBAAAAAAAAAAAAAgEDBAUGB//EAB4QAQEBAAMBAAMBAAAAAAAAAAABAgMREhMEUWFB/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwUG/8QAGhEBAQEBAQEBAAAAAAAAAAAAAAEREgIDE//aAAwDAQACEQMRAD8A/jACgAAAAAAAAAAAAAADQIqMjViKiomKjURUbGRsaiNikxUjSNbI3OXXOFZtRMumeN1zxuucNOd9ueeJ2xxLzl0jTlfTM4jrnLIqVXO1ci459t9LrLrFSuPs+h0zjv230830PonacvT7Po8v0Z7rN+hy9X0TeR5/TWL7OXb2z0iKkTUV22EyuYRLYkdJgVnqPwYDg9wAAAAAAAAAAAAAAawgKjYlsVFxsS2LEXFRMjrmNM2mY65wzMdY0xa3OXbMc5VTS6511i5XH032vTGO8qvTz+z2dJj0zbfbzej0nacvT9GfRw7bKnSY7ez25xUiamL9EpMukwazbExUjpnjdM4HO+nLOXTOHXOFzI53255w6TjXIoc77qZhcydyMu5DWdq+mOV5p+w1Mr8CA5PowAAAAAAAAAAAAAAABsY2AqLymReRmryvKIuNaxVyrlc4qGsVcqpXOKgi5W9pjYrK5WxMXIM1sbGzLpnAzamRecrzh0mRzvpGcOmcKkdIOd9Jzh0mSVvaudqpFxy9xl5YM5Xo7PUeXXPP25a/I/qanFe+8kRrnkfO1+R/XPXPb/qdNT5Poa/I/rjv8l4byWp9Vm+m5849V/Iv7a8nbE1riPhAK9cAAAAAAAAAAAAAAAAiomKgiouIioM10i45yqlVmukbESqgzVxsZFSKzVRcjMx0gxaZy6ZyyWKmoOdq8x0kcfbfoa53XeK7eW839ZeY1Oa9ns+keC86bzVNPze+80Ref+vDeWpu6nS/m9t/Ic7z39vL6p2mrxHe8t/abuubUXFd0S2A1sY2CNARHwgG3qAAAAAAAAAAAAAAAADYwBcVK59t7Ex1lVK4yqlGbHaVcrjKqU1iu8q5qPPNN9GsWPTNxv0eX030azy9P0Pq83be01OXf6svJXFppzHT2z0kiGK7b2lsEa1kaI2NY0RrUxoy2NYdiKE9noMX2xzvJAXmvkANPRAAAAAAAAAAAAAAAAAAGjYiNkVGRUGa2NjI0Za2MbBGtY0Za2MBFBBEbGsaI1sS0ZU1PZ2IpvaPTLsMdO29uF5E3lFnivR6TeR5dcqLyq3Pk9WuVz1zPNd1F1R0nyj0XlHm7aN8RgCtgAAAAAAAAAAAAAAABAgNUlsRFKiY2DKmpjRlUalvYimpOxFNT2diYuVrn6PQmOnZ25XbLyC8u3o9PPeRN5Bfzem7TeR57tN0NT5vReVF5HHtg1PEdLyVN1UitY3tgCgAAAAAAAAAAAAAAAAAAAAAAANIwBTe0naJi+29ufZ2Jjp2305dnYcuvo9OXZ2HLp7Pbl2By6e2ekAuK9M7YKYdgCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//Z"
+          max-width="auto"
           cols="12"
-          class="green lighten-2 fill-height d-flex flex-column justify-center align-center"
         >
-          <v-card flat tile>
-            <v-card-text>Card #1</v-card-text>
-          </v-card>
-        </v-col>
+          <v-row align="center" justify="center">
+            <v-col class="text-center" cols="12">
+              <h1 class="text-h4 font-weight-thin mb-4">Vuetify</h1>
+              <h4 class="subheading">Build your application today!</h4>
+            </v-col>
+          </v-row>
+        </v-parallax>
+        <h1>ບົດຄວາມສຸດພິເສດ 🦖</h1>
       </v-container>
     </v-container>
     <v-col cols="12" sm="8" md="3" v-for="item in items" :key="item.title">
       <v-card
         :loading="loading"
-        class="item mx-auto my-12"
+        class="item mx-auto my-12 mb-8"
         max-width="400"
         target="_blank"
         @mouseover="currentIndex = index"
@@ -109,6 +116,12 @@
           </v-btn>
         </v-card-actions>
       </v-card>
+    </v-col>
+    <v-col
+      cols="12"
+      class="green lighten-2 fill-height d-flex flex-column justify-center align-center"
+    >
+      <v-card max-width="auto">hello</v-card>
     </v-col>
   </v-row>
 </template>

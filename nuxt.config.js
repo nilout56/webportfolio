@@ -39,7 +39,8 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-
+      dark: false,
+      light: true,
       themes: {
         dark: {
 
@@ -50,6 +51,17 @@ export default {
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
+        },
+        light: {
+          //  primary: colors.blue.darken4, // #E53935 #0d47a1
+          primary: "#125AA2",
+          backgroundbox: "#125AA2",
+          secondary: "#3B93D0", // #FFCDD2
+          accent: colors.indigo.base, // #3F51B5
+          disable: "#8F8F8F",
+          warning: "#F2994A",
+          error: "#EE0000",
+          success: "#219653",
         },
       },
     },
