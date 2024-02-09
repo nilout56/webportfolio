@@ -4,7 +4,7 @@
       <v-row class="pa-6">
         <v-col cols="12" sm="8">
           <h1>Nilout Blog</h1>
-          <h1 class="typewriter nocaret"></h1>
+          <!-- <h1 class="typewriter nocaret"></h1> -->
           <p id="animated-text">ຮວບຮວມທຸກຜົນງານ</p>
           <v-btn class="outlined-button" outlined>Web Dev</v-btn>
           <v-btn class="outlined-button" outlined>Software Dev</v-btn>
@@ -23,6 +23,23 @@
           </div>
         </v-col>
       </v-row>
+      <v-container
+        max-width="auto"
+        align="center"
+        justify="center"
+        style="height: 50vh"
+        dense
+        elevation="0"
+      >
+        <v-col
+          cols="12"
+          class="green lighten-2 fill-height d-flex flex-column justify-center align-center"
+        >
+          <v-card flat tile>
+            <v-card-text>Card #1</v-card-text>
+          </v-card>
+        </v-col>
+      </v-container>
     </v-container>
     <v-col cols="12" sm="8" md="3" v-for="item in items" :key="item.title">
       <v-card
