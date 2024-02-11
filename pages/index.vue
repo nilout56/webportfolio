@@ -11,7 +11,6 @@
           <v-btn class="outlined-button" outlined>Game Dev</v-btn>
           <v-btn class="outlined-button" outlined>UX/UI Design</v-btn>
           <v-btn class="outlined-button" outlined>Mobile Application</v-btn>
-          <p>By Nilout Stls</p>
         </v-col>
         <v-col cols="12" sm="4">
           <div class="space">
