@@ -52,7 +52,7 @@
             </v-col>
           </v-row>
         </v-parallax>
-        <h1 class="font-weight-bold mt-5">ບົດຄວາມສຸດພິເສດ 🦖</h1>
+        <h1 class="font-weight-bold mt-5 mb-12">ບົດຄວາມສຸດພິເສດ 🦖</h1>
       </v-container>
     </v-container>
     <v-col cols="12" sm="8" md="3" v-for="item in items" :key="item.title">
