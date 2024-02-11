@@ -30,7 +30,7 @@
         style="height: 50vh"
         dense
         elevation="0"
-        class="mb-12"
+        class="mb-12 mt-6"
       >
         <v-parallax
           dark
@@ -54,6 +54,7 @@
         </v-parallax>
         <h1 class="font-weight-bold mt-5 mb-12">ບົດຄວາມສຸດພິເສດ 🦖</h1>
       </v-container>
+      <v-container cols="6" class="mt-12 mb-12"> </v-container>
     </v-container>
     <v-col cols="12" sm="8" md="3" v-for="item in items" :key="item.title">
       <v-card
