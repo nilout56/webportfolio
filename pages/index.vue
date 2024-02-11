@@ -10,7 +10,7 @@
           <v-btn class="outlined-button" outlined>Software Dev</v-btn>
           <v-btn class="outlined-button" outlined>Game Dev</v-btn>
           <v-btn class="outlined-button" outlined>UX/UI Design</v-btn>
-          <v-btn class="outlined-button" outlined>Mobile Application Dev</v-btn>
+          <v-btn class="outlined-button" outlined>Mobile Application</v-btn>
           <p>By Nilout Stls</p>
         </v-col>
         <v-col cols="12" sm="4">
@@ -34,18 +34,25 @@
       >
         <v-parallax
           dark
-          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgICAgHBwgIBwcHBwoHBwcHBw8ICQcKFREWFhURExMYHSggGCYlJxMfITEhJSkrOi46Fx8zODMsNygtLisBCgoKDg0NDw0NDysZFRk3Kzc3Ky0rLSstKy0tKystKysrKy03KysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAIEBhQMBIgACEQEDEQH/xAAbAAEBAQEBAQEBAAAAAAAAAAAAAgEDBAUGB//EAB4QAQEBAAMBAAMBAAAAAAAAAAABAgMREhMEUWFB/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwUG/8QAGhEBAQEBAQEBAAAAAAAAAAAAAAEREgIDE//aAAwDAQACEQMRAD8A/jACgAAAAAAAAAAAAAADQIqMjViKiomKjURUbGRsaiNikxUjSNbI3OXXOFZtRMumeN1zxuucNOd9ueeJ2xxLzl0jTlfTM4jrnLIqVXO1ci459t9LrLrFSuPs+h0zjv230830PonacvT7Po8v0Z7rN+hy9X0TeR5/TWL7OXb2z0iKkTUV22EyuYRLYkdJgVnqPwYDg9wAAAAAAAAAAAAAAawgKjYlsVFxsS2LEXFRMjrmNM2mY65wzMdY0xa3OXbMc5VTS6511i5XH032vTGO8qvTz+z2dJj0zbfbzej0nacvT9GfRw7bKnSY7ez25xUiamL9EpMukwazbExUjpnjdM4HO+nLOXTOHXOFzI53255w6TjXIoc77qZhcydyMu5DWdq+mOV5p+w1Mr8CA5PowAAAAAAAAAAAAAAABsY2AqLymReRmryvKIuNaxVyrlc4qGsVcqpXOKgi5W9pjYrK5WxMXIM1sbGzLpnAzamRecrzh0mRzvpGcOmcKkdIOd9Jzh0mSVvaudqpFxy9xl5YM5Xo7PUeXXPP25a/I/qanFe+8kRrnkfO1+R/XPXPb/qdNT5Poa/I/rjv8l4byWp9Vm+m5849V/Iv7a8nbE1riPhAK9cAAAAAAAAAAAAAAAAiomKgiouIioM10i45yqlVmukbESqgzVxsZFSKzVRcjMx0gxaZy6ZyyWKmoOdq8x0kcfbfoa53XeK7eW839ZeY1Oa9ns+keC86bzVNPze+80Ref+vDeWpu6nS/m9t/Ic7z39vL6p2mrxHe8t/abuubUXFd0S2A1sY2CNARHwgG3qAAAAAAAAAAAAAAAADYwBcVK59t7Ex1lVK4yqlGbHaVcrjKqU1iu8q5qPPNN9GsWPTNxv0eX030azy9P0Pq83be01OXf6svJXFppzHT2z0kiGK7b2lsEa1kaI2NY0RrUxoy2NYdiKE9noMX2xzvJAXmvkANPRAAAAAAAAAAAAAAAAAAGjYiNkVGRUGa2NjI0Za2MbBGtY0Za2MBFBBEbGsaI1sS0ZU1PZ2IpvaPTLsMdO29uF5E3lFnivR6TeR5dcqLyq3Pk9WuVz1zPNd1F1R0nyj0XlHm7aN8RgCtgAAAAAAAAAAAAAAABAgNUlsRFKiY2DKmpjRlUalvYimpOxFNT2diYuVrn6PQmOnZ25XbLyC8u3o9PPeRN5Bfzem7TeR57tN0NT5vReVF5HHtg1PEdLyVN1UitY3tgCgAAAAAAAAAAAAAAAAAAAAAAANIwBTe0naJi+29ufZ2Jjp2305dnYcuvo9OXZ2HLp7Pbl2By6e2ekAuK9M7YKYdgCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//Z"
+          :src="imageUrls[currentImageUrlIndex]"
           max-width="auto"
           cols="12"
         >
           <v-row align="center" justify="center">
             <v-col class="text-center" cols="12">
-              <h1 class="text-h4 font-weight-thin mb-4">Vuetify</h1>
-              <h4 class="subheading">Build your application today!</h4>
+              <h1
+                class="text-h4 font-weight-thin mb-4"
+                data-aos="zoom-out-down"
+              >
+                Never Stop Learning
+              </h1>
+              <h4 class="subheading" data-aos="zoom-out">
+                Follow And Make Your Dream❤️!
+              </h4>
             </v-col>
           </v-row>
         </v-parallax>
-        <h1>ບົດຄວາມສຸດພິເສດ 🦖</h1>
+        <h1 class="font-weight-bold mt-5">ບົດຄວາມສຸດພິເສດ 🦖</h1>
       </v-container>
     </v-container>
     <v-col cols="12" sm="8" md="3" v-for="item in items" :key="item.title">
@@ -65,7 +72,7 @@
           ></v-progress-linear>
         </template>
 
-        <v-img :src="item.imageUrl"></v-img>
+        <v-img :src="item.imageUrl" max-width="400px" mx-height="200px"></v-img>
 
         <v-card-title>{{ item.title }}</v-card-title>
 
@@ -92,24 +99,6 @@
 
         <v-divider class="mx-4"></v-divider>
 
-        <v-card-title>Tonight's availability</v-card-title>
-
-        <v-card-text>
-          <v-chip-group
-            v-model="selection"
-            active-class="deep-purple accent-4 white--text"
-            column
-          >
-            <v-chip>5:30PM</v-chip>
-
-            <v-chip>7:30PM</v-chip>
-
-            <v-chip>8:00PM</v-chip>
-
-            <v-chip>9:00PM</v-chip>
-          </v-chip-group>
-        </v-card-text>
-
         <v-card-actions>
           <v-btn color="deep-purple lighten-2" text @click="reserve">
             Reserve
@@ -117,37 +106,40 @@
         </v-card-actions>
       </v-card>
     </v-col>
-    <v-col
-      cols="12"
-      class="green lighten-2 fill-height d-flex flex-column justify-center align-center"
-    >
-      <v-card max-width="auto">hello</v-card>
-    </v-col>
   </v-row>
 </template>
 
 <script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 export default {
   data() {
     return {
       loading: false,
       selection: 1,
       currentIndex: null,
+      currentImageUrlIndex: 0,
+
+      show: false,
+      imageUrls: [
+        'https://i.makeagif.com/media/9-18-2018/RySj_U.gif',
+        'https://media0.giphy.com/media/JrZHAQT0CxmkPWj9LZ/200.gif',
+        'https://i.gifer.com/J4o.gif',
+        'https://i.gifer.com/VJi.gif',
+      ],
       items: [
         {
           title: 'ສ້າງ card ດ້ວຍ vuetify ງ່າຍໆ',
           subtitle: 'ໂດຍ ນິລຸດ ເຮືອງແພງສີ',
           text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://mpics.mgronline.com/pics/Images/563000003510401.JPEG',
+          imageUrl: require('@/assets/images/me.jpeg'),
           link: '#',
         },
         {
           title: 'ສ້າງ card ດ້ວຍ vuetify ງ່າຍໆ',
           subtitle: 'ໂດຍ ນິລຸດ ເຮືອງແພງສີ',
           text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://4.bp.blogspot.com/--Z1nqbEOgLA/XQtZ0cdTchI/AAAAAAAAgOg/QAitEmvmu9U-WmiygAAjlDapKy8uRBUewCLcBGAs/s1600/rsz_dark2.jpg',
+          imageUrl: require('@/assets/images/meee.jpeg'),
           link: '#',
         },
         {
@@ -269,10 +261,19 @@ export default {
     reserve() {
       this.loading = true
 
-      setTimeout(() => (this.loading = false), 2000)
+      setTimeout(() => (this.loading = false), 5000)
+    },
+    updateParallaxImage() {
+      this.currentImageUrlIndex =
+        (this.currentImageUrlIndex + 1) % this.imageUrls.length
+      const newImageUrl = this.imageUrls[this.currentImageUrlIndex]
+      document.getElementById(
+        'animated-parallax'
+      ).style.backgroundImage = `url('${newImageUrl}')`
     },
   },
   mounted() {
+    setInterval(this.updateParallaxImage, 3000)
     const texts = [
       'ເສີມສ້າງຄວາມຮູ້',
       'ເພີ່ມພູນຄວາມສາມາດ',
@@ -280,12 +281,14 @@ export default {
       'ຄິດກ່ອນລົງມືທຳ',
       'ຂະຫຍັນແລະອົດທົນ',
     ]
+
     let count = 0
 
     setInterval(() => {
       document.getElementById('animated-text').innerHTML = texts[count]
       count = (count + 1) % texts.length
-    }, 2000) // Change text every 2 seconds
+    }, 2000),
+      AOS.init() // Change text every 2 seconds
   },
 }
 </script>
@@ -381,15 +384,30 @@ export default {
   z-index: -2;
 }
 .outlined-button {
-  transition: background-color 0.3s ease-in;
+  /* transition: background-color 0.3s ease-in; */
   margin: 5px;
+  font-weight: 700;
+  border-radius: 0;
+  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
 }
-
+.outlined-button::before {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, #00fffc, transparent);
+  transform: translateX(-100%);
+  transition: 0.6s;
+  position: absolute;
+}
 .outlined-button:hover {
   margin: 5;
-  background-color: #16b076;
+  background: transparent;
+  box-shadow: 0 0 20px 5px #00fffc;
   transform: scale(1.1);
-  color: black;
   font-weight: bold;
 }
 
@@ -426,209 +444,6 @@ export default {
   }
   100% {
     opacity: 0;
-  }
-}
-@keyframes typing {
-  0.0000%,
-  27.3488% {
-    content: '';
-  }
-  1.1395%,
-  26.2093% {
-    content: 'd';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  2.2791%,
-  25.0698% {
-    content: 'de';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  3.4186%,
-  23.9302% {
-    content: 'dev';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  4.5581%,
-  22.7907% {
-    content: 'deve';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  5.6977%,
-  21.6512% {
-    content: 'devel';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  6.8372%,
-  20.5116% {
-    content: 'develo';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  7.9767%,
-  19.3721% {
-    content: 'develop';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  9.1163%,
-  18.2326% {
-    content: 'develope';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  10.2558%,
-  17.0930% {
-    content: 'developer';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-
-  30.7674%,
-  51.2791% {
-    content: '';
-  }
-  31.9070%,
-  50.1395% {
-    content: 'w';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  33.0465%,
-  49.0000% {
-    content: 'wr';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  34.1860%,
-  47.8605% {
-    content: 'wri';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  35.3256%,
-  46.7209% {
-    content: 'writ';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  36.4651%,
-  45.5814% {
-    content: 'write';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  37.6047%,
-  44.4419% {
-    content: 'writer';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-
-  54.6977%,
-  75.2093% {
-    content: '';
-  }
-  55.8372%,
-  74.0698% {
-    content: 'r';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  56.9767%,
-  72.9302% {
-    content: 're';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  58.1163%,
-  71.7907% {
-    content: 'rea';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  59.2558%,
-  70.6512% {
-    content: 'read';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  60.3953%,
-  69.5116% {
-    content: 'reade';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  61.5349%,
-  68.3721% {
-    content: 'reader';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-
-  78.6279%,
-  96.8605% {
-    content: '';
-  }
-  79.7674%,
-  95.7209% {
-    content: 'h';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  80.9070%,
-  94.5814% {
-    content: 'hu';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  82.0465%,
-  93.4419% {
-    content: 'hum';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  83.1860%,
-  92.3023% {
-    content: 'huma';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
-  }
-  84.3256%,
-  91.1628% {
-    content: 'human';
-    color: #16b076;
-    font-size: 72px;
-    font-weight: bold;
   }
 }
 
