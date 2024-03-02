@@ -98,7 +98,7 @@
   display: none;
 }
 .main {
-  background-image: url('@/assets/images/bgMain.png');
+  background-image: url('~/assets/images/bgMain.png');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
