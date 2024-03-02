@@ -3,7 +3,8 @@
     <v-container fluid class="mt-4 mb-8">
       <v-row class="pa-0 justify-end">
         <v-col cols="12">
-          <h1>Nilout Blog</h1>
+          <h1><gamebutton /></h1>
+
           <!-- <h1 class="typewriter nocaret"></h1> -->
           <!-- <p id="animated-text">ຮວບຮວມທຸກຜົນງານ</p> -->
           <v-btn class="outlined-button" outlined>Web Dev</v-btn>
@@ -43,7 +44,7 @@
         dark
         max-width="auto"
         cols="12"
-        :src="require('@/assets/images/tech.jpg')"
+        src="https://images.unsplash.com/photo-1524169220946-12efd782aab4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       >
         <v-row align="center" justify="center">
           <v-col class="text-center" cols="12">
@@ -66,9 +67,10 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import cardhover from '../components/hovercard/cardhover.vue'
 import spacebutton from '../components/buttons/spacebutton.vue'
+import gamebutton from '../components/buttons/gamebutton.vue'
 import detailss from '../components/me.vue'
 export default {
-  components: { cardhover, spacebutton, detailss },
+  components: { cardhover, spacebutton, detailss, gamebutton },
   data() {
     return {
       loading: false,
