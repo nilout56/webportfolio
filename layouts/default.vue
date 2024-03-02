@@ -67,15 +67,14 @@
         persistent-hint
       ></v-switch>
     </v-app-bar>
-    <v-main>
-      <div class="mx-2">
+    <v-main class="main">
+      <div>
         <Nuxt />
       </div>
     </v-main>
     <v-btn
       v-show="fab"
       v-scroll="onScroll"
-      class="mr-4"
       id="print"
       fab
       dark
@@ -97,6 +96,12 @@
 }
 .v-navigation-drawer >>> .v-navigation-drawer__border {
   display: none;
+}
+.main {
+  background-image: url('@/assets/images/bgMain.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 </style>
 <script>

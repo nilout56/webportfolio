@@ -1,8 +1,8 @@
 <template>
   <v-row class="d-flex justify-center mt-4">
     <v-container fluid class="mt-4 mb-8">
-      <v-row class="pa-6">
-        <v-col cols="12" sm="8">
+      <v-row class="pa-0">
+        <v-col cols="12" sm="8" md="8">
           <h1>Nilout Blog</h1>
           <!-- <h1 class="typewriter nocaret"></h1> -->
           <p id="animated-text">ຮວບຮວມທຸກຜົນງານ</p>
@@ -22,97 +22,46 @@
           </div>
         </v-col>
       </v-row>
-      <v-container
-        max-width="auto"
-        align="center"
-        justify="center"
-        style="height: 50vh"
-        dense
-        elevation="0"
-        class="mb-12 mt-6"
-      >
-        <v-parallax
-          dark
-          :src="imageUrls[currentImageUrlIndex]"
-          max-width="auto"
-          cols="12"
-        >
-          <v-row align="center" justify="center">
-            <v-col class="text-center" cols="12">
-              <h1
-                class="text-h4 font-weight-thin mb-4"
-                data-aos="zoom-out-down"
-              >
-                Never Stop Learning
-              </h1>
-              <h4 class="subheading" data-aos="zoom-out">
-                Follow And Make Your Dream❤️!
-              </h4>
-            </v-col>
-          </v-row>
-        </v-parallax>
-        <h1 class="font-weight-bold mt-5 mb-12">ບົດຄວາມສຸດພິເສດ 🦖</h1>
-      </v-container>
-      <v-container cols="6" class="mt-12 mb-12"> </v-container>
     </v-container>
-    <v-col cols="12" sm="8" md="3" v-for="item in items" :key="item.title">
-      <v-card
-        :loading="loading"
-        class="item mx-auto my-12 mb-8"
-        max-width="400"
-        target="_blank"
-        @mouseover="currentIndex = index"
-        @mouseleave="currentIndex = null"
+
+    <cardhover />
+
+    <v-container
+      max-width="auto"
+      align="center"
+      justify="center"
+      style="height: 50vh"
+      dense
+      elevation="0"
+      class="mb-12 mt-6"
+    >
+      <v-parallax
+        dark
+        max-width="auto"
+        cols="12"
+        src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
       >
-        <template slot="progress">
-          <v-progress-linear
-            color="deep-purple"
-            height="10"
-            indeterminate
-          ></v-progress-linear>
-        </template>
-
-        <v-img :src="item.imageUrl" max-width="400px" mx-height="200px"></v-img>
-
-        <v-card-title>{{ item.title }}</v-card-title>
-
-        <v-card-text>
-          <v-row align="center" class="mx-0">
-            <v-rating
-              :value="4.5"
-              color="amber"
-              dense
-              half-increments
-              readonly
-              size="14"
-            ></v-rating>
-
-            <div class="grey--text ms-4">4.5 (413)</div>
-          </v-row>
-
-          <div class="my-4 text-subtitle-1">{{ item.subtitle }}</div>
-
-          <v-text>
-            {{ item.text }}
-          </v-text>
-        </v-card-text>
-
-        <v-divider class="mx-4"></v-divider>
-
-        <v-card-actions>
-          <v-btn color="deep-purple lighten-2" text @click="reserve">
-            Reserve
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
+        <v-row align="center" justify="center">
+          <v-col class="text-center" cols="12">
+            <h1 class="text-h4 font-weight-thin mb-4" data-aos="zoom-out-down">
+              Never Stop Learning
+            </h1>
+            <h4 class="subheading" data-aos="zoom-out">
+              Follow And Make Your Dream❤️!
+            </h4>
+          </v-col>
+        </v-row>
+      </v-parallax>
+    </v-container>
   </v-row>
 </template>
 
 <script>
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import cardhover from '../components/hovercard/cardhover.vue'
 export default {
+  components: { cardhover },
   data() {
     return {
       loading: false,
@@ -121,140 +70,6 @@ export default {
       currentImageUrlIndex: 0,
 
       show: false,
-      imageUrls: [
-        'https://i.makeagif.com/media/9-18-2018/RySj_U.gif',
-        'https://media0.giphy.com/media/JrZHAQT0CxmkPWj9LZ/200.gif',
-        'https://i.gifer.com/J4o.gif',
-        'https://i.gifer.com/VJi.gif',
-      ],
-      items: [
-        {
-          title: 'ສ້າງ card ດ້ວຍ vuetify ງ່າຍໆ',
-          subtitle: 'ໂດຍ ນິລຸດ ເຮືອງແພງສີ',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl: require('@/assets/images/me.jpeg'),
-          link: '#',
-        },
-        {
-          title: 'ສ້າງ card ດ້ວຍ vuetify ງ່າຍໆ',
-          subtitle: 'ໂດຍ ນິລຸດ ເຮືອງແພງສີ',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl: require('@/assets/images/meee.jpeg'),
-          link: '#',
-        },
-        {
-          title: 'ສ້າງ card ດ້ວຍ vuetify ງ່າຍໆ',
-          subtitle: 'ໂດຍ ນິລຸດ ເຮືອງແພງສີ',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://occ-0-64-58.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABSxTd7UnypTYDX5rxc3b24el9YjrfnHShBgCvf41pKYaYeazzLqyr8DwzjitEVdPfY1UbzV0esVERoJTlKDHgOTfUQfgmU-mF8doZB2wNf0z9V9_xYqzwedxFjuB.jpg',
-          link: '#',
-        },
-        {
-          title: 'ສ້າງ card ດ້ວຍ vuetify ງ່າຍໆ',
-          subtitle: 'ໂດຍ ນິລຸດ ເຮືອງແພງສີ',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://fancy-kid.com/wp-content/uploads/2020/03/AAAABUzjI_9C29BLVMlg4DnrRGgj8aiy-kAN0H-5ljMuNBzjdgpR51R8hEmpSgh805krsL3UaD6EtUoT5t04WRR9j2yc2-vR-1920x1080.jpg',
-          link: '#',
-        },
-        {
-          title: 'ສ້າງ card ດ້ວຍ vuetify ງ່າຍໆ',
-          subtitle: 'ໂດຍ ນິລຸດ ເຮືອງແພງສີ',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://mpics.mgronline.com/pics/Images/563000003510401.JPEG',
-          link: '#',
-        },
-        {
-          title: 'ສ້າງ card ດ້ວຍ vuetify ງ່າຍໆ',
-          subtitle: 'ໂດຍ ນິລຸດ ເຮືອງແພງສີ',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://4.bp.blogspot.com/--Z1nqbEOgLA/XQtZ0cdTchI/AAAAAAAAgOg/QAitEmvmu9U-WmiygAAjlDapKy8uRBUewCLcBGAs/s1600/rsz_dark2.jpg',
-          link: '#',
-        },
-        {
-          title: 'ສ້າງ card ດ້ວຍ vuetify ງ່າຍໆ',
-          subtitle: 'ໂດຍ ນິລຸດ ເຮືອງແພງສີ',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://occ-0-64-58.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABSxTd7UnypTYDX5rxc3b24el9YjrfnHShBgCvf41pKYaYeazzLqyr8DwzjitEVdPfY1UbzV0esVERoJTlKDHgOTfUQfgmU-mF8doZB2wNf0z9V9_xYqzwedxFjuB.jpg',
-          link: '#',
-        },
-        {
-          title: 'การสร้าง Component เองใน Figma',
-          subtitle: 'ໂດຍ ນິລຸດ ເຮືອງແພງສີ',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://fancy-kid.com/wp-content/uploads/2020/03/AAAABUzjI_9C29BLVMlg4DnrRGgj8aiy-kAN0H-5ljMuNBzjdgpR51R8hEmpSgh805krsL3UaD6EtUoT5t04WRR9j2yc2-vR-1920x1080.jpg',
-          link: '#',
-        },
-        {
-          title: 'การสร้าง Component เองใน Figma',
-          subtitle: 'โดย ไกรศร แก้วเศรษฐี',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://mpics.mgronline.com/pics/Images/563000003510401.JPEG',
-          link: '#',
-        },
-        {
-          title: 'การสร้าง Component เองใน Figma',
-          subtitle: 'โดย ไกรศร แก้วเศรษฐี',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://4.bp.blogspot.com/--Z1nqbEOgLA/XQtZ0cdTchI/AAAAAAAAgOg/QAitEmvmu9U-WmiygAAjlDapKy8uRBUewCLcBGAs/s1600/rsz_dark2.jpg',
-          link: '#',
-        },
-        {
-          title: 'การสร้าง Component เองใน Figma',
-          subtitle: 'โดย ไกรศร แก้วเศรษฐี',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://occ-0-64-58.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABSxTd7UnypTYDX5rxc3b24el9YjrfnHShBgCvf41pKYaYeazzLqyr8DwzjitEVdPfY1UbzV0esVERoJTlKDHgOTfUQfgmU-mF8doZB2wNf0z9V9_xYqzwedxFjuB.jpg',
-          link: '#',
-        },
-        {
-          title: 'การสร้าง Component เองใน Figma',
-          subtitle: 'โดย ไกรศร แก้วเศรษฐี',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://fancy-kid.com/wp-content/uploads/2020/03/AAAABUzjI_9C29BLVMlg4DnrRGgj8aiy-kAN0H-5ljMuNBzjdgpR51R8hEmpSgh805krsL3UaD6EtUoT5t04WRR9j2yc2-vR-1920x1080.jpg',
-          link: '#',
-        },
-        {
-          title: 'การสร้าง Component เองใน Figma',
-          subtitle: 'โดย ไกรศร แก้วเศรษฐี',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://mpics.mgronline.com/pics/Images/563000003510401.JPEG',
-          link: '#',
-        },
-        {
-          title: 'การสร้าง Component เองใน Figma',
-          subtitle: 'โดย ไกรศร แก้วเศรษฐี',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://4.bp.blogspot.com/--Z1nqbEOgLA/XQtZ0cdTchI/AAAAAAAAgOg/QAitEmvmu9U-WmiygAAjlDapKy8uRBUewCLcBGAs/s1600/rsz_dark2.jpg',
-          link: '#',
-        },
-        {
-          title: 'การสร้าง Component เองใน Figma',
-          subtitle: 'โดย ไกรศร แก้วเศรษฐี',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://occ-0-64-58.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABSxTd7UnypTYDX5rxc3b24el9YjrfnHShBgCvf41pKYaYeazzLqyr8DwzjitEVdPfY1UbzV0esVERoJTlKDHgOTfUQfgmU-mF8doZB2wNf0z9V9_xYqzwedxFjuB.jpg',
-          link: '#',
-        },
-        {
-          title: 'การสร้าง Component เองใน Figma',
-          subtitle: 'โดย ไกรศร แก้วเศรษฐี',
-          text: 'การสร้างและใช้ Component เองใน...',
-          imageUrl:
-            'https://fancy-kid.com/wp-content/uploads/2020/03/AAAABUzjI_9C29BLVMlg4DnrRGgj8aiy-kAN0H-5ljMuNBzjdgpR51R8hEmpSgh805krsL3UaD6EtUoT5t04WRR9j2yc2-vR-1920x1080.jpg',
-          link: '#',
-        },
-      ],
     }
   },
   methods: {
@@ -262,14 +77,6 @@ export default {
       this.loading = true
 
       setTimeout(() => (this.loading = false), 5000)
-    },
-    updateParallaxImage() {
-      this.currentImageUrlIndex =
-        (this.currentImageUrlIndex + 1) % this.imageUrls.length
-      const newImageUrl = this.imageUrls[this.currentImageUrlIndex]
-      document.getElementById(
-        'animated-parallax'
-      ).style.backgroundImage = `url('${newImageUrl}')`
     },
   },
   mounted() {

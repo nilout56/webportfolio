@@ -1,118 +1,108 @@
 <template>
-  <v-row class="mt-4 pl-6">
-    <v-col cols="12" sm="2" md="3" v-for="(item, index) in items" :key="index">
-      <v-card
-        class="item mb-12 mt-12"
-        target="_blank"
-        @mouseover="currentIndex = index"
-        @mouseleave="currentIndex = null"
-      >
-        <div class="img-border">
-          <img :src="item.imageUrl" alt="" />
-        </div>
-        <div class="detail" v-show="currentIndex === index">
-          <div class="detail-button">
-            <v-row md="4" class="detail-button-left justify-space-around mt-2">
-              <v-btn><v-icon>mdi-play</v-icon></v-btn>
-              <v-btn><v-icon>mdi-plus</v-icon></v-btn>
-              <v-btn><v-icon>mdi-thumb-up</v-icon></v-btn>
-            </v-row>
-          </div>
-          <div class="detail-rating mt-2">
-            <p>ตรงกัน 95%</p>
-            <p>18+</p>
-            <p>5 ซีซั่น</p>
-          </div>
-        </div>
-      </v-card>
-    </v-col>
-  </v-row>
+  <section id="hero">
+    <v-parallax
+      src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
+      max-width="auto"
+      cols="12"
+    >
+      <v-row align="center" justify="center">
+        <v-col cols="10">
+          <v-row align="center" justify="center">
+            <v-col cols="12" md="6" xl="8">
+              <h1
+                class="display-2 font-weight-bold mb-4"
+                data-aos="zoom-out-down"
+              >
+                Vuetify.js
+              </h1>
+              <h1 class="font-weight-dark" data-aos="zoom-out-down">
+                Lorem ipsum dolor sit amet consectetur <br />
+                adipisicing elit. Maiores porro voluptatibus <br />
+                delectus nam optio harum!
+              </h1>
+              <v-btn rounded outlined large dark class="mt-5">
+                Saiba mais
+                <v-icon class="ml-2">mdi-arrow-down</v-icon>
+              </v-btn>
+            </v-col>
+            <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down"> </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+      <div class="svg-border-waves text-white">
+        <v-img src="@/assets/images/borderWaves.svg" />
+      </div>
+    </v-parallax>
+    <v-container fluid id="features" class="mt-2">
+      <v-row align="center" justify="center">
+        <v-col cols="10">
+          <v-row align="center" justify="space-around">
+            <!-- <v-col cols="12" class="text-center">
+              <h1 class="font-weight-light display-2">Title</h1>
+              <h1 class="font-weight-light">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </h1>
+            </v-col> -->
+            <v-col
+              cols="12"
+              sm="4"
+              class="text-center"
+              v-for="(feature, i) in features"
+              :key="i"
+            >
+              <v-hover v-slot:default="{ hover }">
+                <v-card
+                  class="card"
+                  shaped
+                  :elevation="hover ? 10 : 4"
+                  :class="{ up: hover }"
+                >
+                  <v-img
+                    :src="feature.img"
+                    max-width="100px"
+                    class="d-block ml-auto mr-auto"
+                    :class="{ 'zoom-efect': hover }"
+                  ></v-img>
+                  <h1 class="font-weight-regular">{{ feature.title }}</h1>
+                  <h4 class="font-weight-regular subtitle-1">
+                    {{ feature.text }}
+                  </h4>
+                </v-card>
+              </v-hover>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+
+    <div class="svg-border-waves">
+      <img src="~@/assets/images/wave2.svg" />
+    </div>
+  </section>
 </template>
+
 <script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 export default {
   data() {
     return {
-      currentIndex: null,
-      items: [
+      dialog: false,
+      features: [
         {
-          imageUrl:
-            'https://mpics.mgronline.com/pics/Images/563000003510401.JPEG',
-          link: '#',
+          img: require('@/assets/images/icon2.png'),
+          title: 'Design Limpo',
+          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         },
         {
-          imageUrl:
-            'https://4.bp.blogspot.com/--Z1nqbEOgLA/XQtZ0cdTchI/AAAAAAAAgOg/QAitEmvmu9U-WmiygAAjlDapKy8uRBUewCLcBGAs/s1600/rsz_dark2.jpg',
-          link: '#',
+          img: require('@/assets/images/icon1.png'),
+          title: 'Dados Seguros',
+          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         },
         {
-          imageUrl:
-            'https://occ-0-64-58.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABSxTd7UnypTYDX5rxc3b24el9YjrfnHShBgCvf41pKYaYeazzLqyr8DwzjitEVdPfY1UbzV0esVERoJTlKDHgOTfUQfgmU-mF8doZB2wNf0z9V9_xYqzwedxFjuB.jpg',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://fancy-kid.com/wp-content/uploads/2020/03/AAAABUzjI_9C29BLVMlg4DnrRGgj8aiy-kAN0H-5ljMuNBzjdgpR51R8hEmpSgh805krsL3UaD6EtUoT5t04WRR9j2yc2-vR-1920x1080.jpg',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://mpics.mgronline.com/pics/Images/563000003510401.JPEG',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://4.bp.blogspot.com/--Z1nqbEOgLA/XQtZ0cdTchI/AAAAAAAAgOg/QAitEmvmu9U-WmiygAAjlDapKy8uRBUewCLcBGAs/s1600/rsz_dark2.jpg',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://occ-0-64-58.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABSxTd7UnypTYDX5rxc3b24el9YjrfnHShBgCvf41pKYaYeazzLqyr8DwzjitEVdPfY1UbzV0esVERoJTlKDHgOTfUQfgmU-mF8doZB2wNf0z9V9_xYqzwedxFjuB.jpg',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://fancy-kid.com/wp-content/uploads/2020/03/AAAABUzjI_9C29BLVMlg4DnrRGgj8aiy-kAN0H-5ljMuNBzjdgpR51R8hEmpSgh805krsL3UaD6EtUoT5t04WRR9j2yc2-vR-1920x1080.jpg',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://mpics.mgronline.com/pics/Images/563000003510401.JPEG',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://4.bp.blogspot.com/--Z1nqbEOgLA/XQtZ0cdTchI/AAAAAAAAgOg/QAitEmvmu9U-WmiygAAjlDapKy8uRBUewCLcBGAs/s1600/rsz_dark2.jpg',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://occ-0-64-58.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABSxTd7UnypTYDX5rxc3b24el9YjrfnHShBgCvf41pKYaYeazzLqyr8DwzjitEVdPfY1UbzV0esVERoJTlKDHgOTfUQfgmU-mF8doZB2wNf0z9V9_xYqzwedxFjuB.jpg',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://fancy-kid.com/wp-content/uploads/2020/03/AAAABUzjI_9C29BLVMlg4DnrRGgj8aiy-kAN0H-5ljMuNBzjdgpR51R8hEmpSgh805krsL3UaD6EtUoT5t04WRR9j2yc2-vR-1920x1080.jpg',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://mpics.mgronline.com/pics/Images/563000003510401.JPEG',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://4.bp.blogspot.com/--Z1nqbEOgLA/XQtZ0cdTchI/AAAAAAAAgOg/QAitEmvmu9U-WmiygAAjlDapKy8uRBUewCLcBGAs/s1600/rsz_dark2.jpg',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://occ-0-64-58.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABSxTd7UnypTYDX5rxc3b24el9YjrfnHShBgCvf41pKYaYeazzLqyr8DwzjitEVdPfY1UbzV0esVERoJTlKDHgOTfUQfgmU-mF8doZB2wNf0z9V9_xYqzwedxFjuB.jpg',
-          link: '#',
-        },
-        {
-          imageUrl:
-            'https://fancy-kid.com/wp-content/uploads/2020/03/AAAABUzjI_9C29BLVMlg4DnrRGgj8aiy-kAN0H-5ljMuNBzjdgpR51R8hEmpSgh805krsL3UaD6EtUoT5t04WRR9j2yc2-vR-1920x1080.jpg',
-          link: '#',
+          img: require('@/assets/images/icon3.png'),
+          title: 'Código Aberto',
+          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         },
       ],
     }
@@ -120,62 +110,115 @@ export default {
 }
 </script>
 
-<style scoped>
-.item {
-  width: 350px;
-  height: 200px;
-  margin: 0 5px;
-  transition: 0.3s ease;
+<style lang="scss">
+.circle {
+  stroke: white;
+  stroke-dasharray: 650;
+  stroke-dashoffset: 650;
+  -webkit-transition: all 0.5s ease-in-out;
+  opacity: 0.3;
 }
-.img-border {
-  width: 350px;
-  height: 200px;
+
+.playBut {
+  /*  border: 1px solid red;*/
+  display: inline-block;
+  -webkit-transition: all 0.5s ease;
+
+  .triangle {
+    -webkit-transition: all 0.7s ease-in-out;
+    stroke-dasharray: 240;
+    stroke-dashoffset: 480;
+    stroke: white;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    .triangle {
+      stroke-dashoffset: 0;
+      opacity: 1;
+      stroke: white;
+      animation: nudge 0.7s ease-in-out;
+
+      @keyframes nudge {
+        0% {
+          transform: translateX(0);
+        }
+        30% {
+          transform: translateX(-5px);
+        }
+        50% {
+          transform: translateX(5px);
+        }
+        70% {
+          transform: translateX(-2px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    .circle {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
 }
-.item img {
+</style>
+
+<style>
+.btn-play {
+  transition: 0.2s;
+}
+
+.svg-border-waves .v-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3rem;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  overflow: hidden;
 }
-.item:hover {
-  transform: scale(1.2);
+
+#hero {
+  z-index: 0;
 }
-.detail {
-  display: flex;
-  flex-direction: column;
+.svg-border-waves img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: -2px;
+  z-index: -1;
+}
+
+.card {
+  min-height: 300px;
   padding: 10px;
+  transition: 0.5s ease-out;
 }
-.detail-button {
-  justify-content: space-between;
+
+.card .v-image {
+  margin-bottom: 15px;
+  transition: 0.75s;
+}
+
+.card h1 {
   margin-bottom: 10px;
 }
-.detail-button-left v-btn,
-.detail-button-right v-btn {
-  width: 50px;
-  height: 50px;
+
+.zoom-efect {
+  transform: scale(1.1);
 }
-.detail-button-left v-btn:first-child {
-  background-color: #fff;
-  color: #333;
-  border: none;
+
+.up {
+  transform: translateY(-20px);
+  transition: 0.5s ease-out;
 }
-.detail-button-left v-btn:last-child {
-  transform: rotate(180deg);
-}
-.detail-button-right v-btn {
-  transform: rotate(90deg);
-}
-.detail-rating {
-  display: flex;
-}
-.detail-rating p {
-  margin-right: 10px;
-}
-.detail-rating p:first-child {
-  color: #2ecc71;
-  font-weight: bold;
-}
-.detail-rating p:nth-child(2) {
-  border: 1px solid #fff;
-  padding: 0 5px;
+</style>
+
+<style>
+section {
+  position: relative;
 }
 </style>
