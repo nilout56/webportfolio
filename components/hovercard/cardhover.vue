@@ -1,31 +1,28 @@
 <template>
   <section id="hero">
     <v-parallax
-      src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
-      max-width="auto"
+      :src="require('@/assets/images/galaxyBG.png')"
       cols="12"
+      max-width="800px"
     >
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" md="6" xl="8">
-              <h1
-                class="display-2 font-weight-bold mb-4"
-                data-aos="zoom-out-down"
-              >
-                Vuetify.js
-              </h1>
-              <h1 class="font-weight-dark" data-aos="zoom-out-down">
-                Lorem ipsum dolor sit amet consectetur <br />
-                adipisicing elit. Maiores porro voluptatibus <br />
-                delectus nam optio harum!
-              </h1>
-              <v-btn rounded outlined large dark class="mt-5">
-                Saiba mais
-                <v-icon class="ml-2">mdi-arrow-down</v-icon>
-              </v-btn>
+              <spacebutton />
             </v-col>
-            <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down"> </v-col>
+            <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down">
+              <h1 class="display-2 font-weight-bold mb-4">WHO AM I?</h1>
+              <h1 class="font-weight-light">
+                I'm Nilout Stls, a developer / Programmer / Engineer Hi there!
+                My name is Nilout. I'm studying at the National University of
+                Laos, Department of Computer Engineering and Information
+                Technology. I have been very passionate about computers and
+                programming since my university days. I dream to be an expert
+                software engineer so that I can build professional and useful
+                software that has business value.
+              </h1>
+            </v-col>
           </v-row>
         </v-col>
       </v-row>
@@ -84,7 +81,9 @@
 <script>
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import spacebutton from '../buttons/spacebutton.vue'
 export default {
+  components: { spacebutton },
   data() {
     return {
       dialog: false,

@@ -1,18 +1,18 @@
 <template>
   <v-row class="d-flex justify-center mt-4 ml-2">
     <v-container fluid class="mt-4 mb-8">
-      <v-row class="pa-0">
-        <v-col cols="12" sm="8" md="8">
+      <v-row class="pa-0 justify-end">
+        <v-col cols="12">
           <h1>Nilout Blog</h1>
           <!-- <h1 class="typewriter nocaret"></h1> -->
-          <p id="animated-text">ຮວບຮວມທຸກຜົນງານ</p>
+          <!-- <p id="animated-text">ຮວບຮວມທຸກຜົນງານ</p> -->
           <v-btn class="outlined-button" outlined>Web Dev</v-btn>
           <v-btn class="outlined-button" outlined>Software Dev</v-btn>
           <v-btn class="outlined-button" outlined>Game Dev</v-btn>
           <v-btn class="outlined-button" outlined>UX/UI Design</v-btn>
           <v-btn class="outlined-button" outlined>Mobile Application</v-btn>
         </v-col>
-        <v-col cols="12" sm="4">
+        <v-col cols="12" md="6" sm="2">
           <div class="space">
             <div class="sun"></div>
             <div class="earth">
@@ -39,7 +39,7 @@
         dark
         max-width="auto"
         cols="12"
-        src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
+        :src="require('@/assets/images/tech.jpg')"
       >
         <v-row align="center" justify="center">
           <v-col class="text-center" cols="12">
@@ -60,8 +60,9 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import cardhover from '../components/hovercard/cardhover.vue'
+import spacebutton from '../components/buttons/spacebutton.vue'
 export default {
-  components: { cardhover },
+  components: { cardhover, spacebutton },
   data() {
     return {
       loading: false,
@@ -72,31 +73,7 @@ export default {
       show: false,
     }
   },
-  methods: {
-    reserve() {
-      this.loading = true
-
-      setTimeout(() => (this.loading = false), 5000)
-    },
-  },
-  mounted() {
-    setInterval(this.updateParallaxImage, 3000)
-    const texts = [
-      'ເສີມສ້າງຄວາມຮູ້',
-      'ເພີ່ມພູນຄວາມສາມາດ',
-      'ພັດທະນາຊີວິດ',
-      'ຄິດກ່ອນລົງມືທຳ',
-      'ຂະຫຍັນແລະອົດທົນ',
-    ]
-
-    let count = 0
-
-    setInterval(() => {
-      document.getElementById('animated-text').innerHTML = texts[count]
-      count = (count + 1) % texts.length
-    }, 2000),
-      AOS.init() // Change text every 2 seconds
-  },
+  methods: {},
 }
 </script>
 
