@@ -13,8 +13,9 @@
                     :src="require('@/assets/images/icon3.svg')"
                     max-width="60px"
                     class="mr-4"
+                    data-aos="fade-right"
                   />
-                  <p class="text-justify">
+                  <p class="text-justify" data-aos="fade-right">
                     I Would Love to make your Ideas real I love to make App and
                     Web Application by
                     Flutter,Vue.js/Nuxt.js,React.js/Next.js...and I would like
@@ -54,6 +55,7 @@
                 :src="require('@/assets/images/mm.png')"
                 class="d-block ml-auto mr-auto"
                 max-width="400px"
+                data-aos="fade-left"
               />
             </v-col>
           </v-row>
@@ -62,7 +64,19 @@
     </v-container>
   </section>
 </template>
+<script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
+export default {
+  data() {
+    return {}
+  },
+  mounted() {
+    AOS.init()
+  },
+}
+</script>
 <style scoped>
 #about {
   background-color: #f4f7f5;

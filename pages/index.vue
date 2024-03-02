@@ -15,7 +15,9 @@
         </v-col>
         <v-col cols="12" md="6" sm="2">
           <div class="space">
-            <div class="sun"></div>
+            <div class="sun">
+              <div class="planet"></div>
+            </div>
             <div class="earth">
               <div class="dino"></div>
               <div class="iconv"></div>
@@ -51,6 +53,7 @@
             <h1 class="text-h4 font-weight-thin mb-4" data-aos="zoom-out-down">
               Never Stop Learning
             </h1>
+            <spin />
             <h4 class="subheading" data-aos="zoom-out">
               Follow And Make Your Dream❤️!
             </h4>
@@ -69,8 +72,9 @@ import cardhover from '../components/hovercard/cardhover.vue'
 import spacebutton from '../components/buttons/spacebutton.vue'
 import gamebutton from '../components/buttons/gamebutton.vue'
 import detailss from '../components/me.vue'
+import spin from '../components/spin.vue'
 export default {
-  components: { cardhover, spacebutton, detailss, gamebutton },
+  components: { cardhover, spacebutton, detailss, gamebutton, spin },
   data() {
     return {
       loading: false,
@@ -115,7 +119,6 @@ export default {
   animation-iteration-count: infinite;
 }
 .sun {
-  background-image: url('~@/assets/images/icons-graphql.png');
   width: 60px;
   height: 40px;
   border-radius: 30px;
@@ -123,8 +126,8 @@ export default {
   background-size: contain;
   position: relative;
   top: 20%;
-  animation-name: spin, scale;
-  animation-duration: 0.5s;
+  animation-name: spin;
+  animation-duration: 100s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -296,6 +299,99 @@ export default {
   .typewriter::before {
     content: 'developer';
     animation: sequencePopup 12s linear infinite;
+  }
+}
+.planet {
+  display: block;
+  width: 125px;
+  height: 125px;
+  position: relative;
+  transform-style: preserve-3d;
+  border-radius: 50%;
+  background: #fcc96b;
+  background: #fcc96b;
+  background: linear-gradient(
+    180deg,
+    #fcc96b 0%,
+    #fcc96b 15%,
+    #f7ae01 15%,
+    #f7ae01 19%,
+    #fcc96b 19%,
+    #fcc96b 22%,
+    #f7ae01 22%,
+    #f7ae01 28%,
+    #fcc96b 28%,
+    #fcc96b 31%,
+    #fcc96b 33%,
+    #fcc96b 36%,
+    #f7ae01 36%,
+    #f7ae01 48%,
+    #fcc96b 48%,
+    #fcc96b 55%,
+    #f7ae01 55%,
+    #f7ae01 66%,
+    #fcc96b 66%,
+    #fcc96b 70%,
+    #f7ae01 70%,
+    #f7ae01 73%,
+    #fcc96b 73%,
+    #fcc96b 82%,
+    #f7ae01 82%,
+    #c7ba9d 86%,
+    #fcc96b 86%
+  );
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.25),
+    inset 8px -4px 6px rgba(199, 128, 0, 0.5),
+    inset -8px 4px 8px rgba(255, 235, 199, 0.5), inset 20px -5px 12px #f7ae01,
+    0 0 100px #ffffff59;
+  transform: rotateZ(-15deg);
+}
+
+.planet::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 16px solid #e1a519;
+  border-top-width: 0;
+  border-radius: 50%;
+  box-shadow: 0 -2px 0 #c18620;
+  animation: rings1 0.8s infinite linear;
+}
+
+.planet::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 8px solid #d48b0c;
+  border-top-width: 0;
+  border-radius: 50%;
+  box-shadow: 0 -2px 0 #b99309;
+  animation: rings2 0.8s infinite linear;
+}
+
+@keyframes rings1 {
+  0% {
+    transform: rotateX(65deg) rotateZ(0deg) scale(1.75);
+  }
+
+  100% {
+    transform: rotateX(65deg) rotateZ(360deg) scale(1.75);
+  }
+}
+
+@keyframes rings2 {
+  0% {
+    transform: rotateX(65deg) rotateZ(0deg) scale(1.7);
+  }
+
+  100% {
+    transform: rotateX(65deg) rotateZ(360deg) scale(1.7);
   }
 }
 </style>

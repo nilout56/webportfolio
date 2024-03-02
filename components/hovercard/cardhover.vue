@@ -107,6 +107,7 @@ export default {
     }
   },
 }
+// AOS.init()
 </script>
 
 <style lang="scss">
