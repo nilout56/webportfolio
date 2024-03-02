@@ -1,5 +1,5 @@
 <template>
-  <v-row class="d-flex justify-center mt-4">
+  <v-row class="d-flex justify-center mt-4 ml-2">
     <v-container fluid class="mt-4 mb-8">
       <v-row class="pa-0">
         <v-col cols="12" sm="8" md="8">
