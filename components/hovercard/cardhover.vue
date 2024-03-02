@@ -73,7 +73,7 @@
     </v-container>
 
     <div class="svg-border-waves">
-      <img src="~@/assets/images/wave2.svg" />
+      <img src="@/assets/images/borderWavesBlue.svg" />
     </div>
   </section>
 </template>
@@ -89,19 +89,19 @@ export default {
       dialog: false,
       features: [
         {
-          img: require('@/assets/images/icon2.png'),
-          title: 'Design Limpo',
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+          img: require('@/assets/images/icons-flutter.png'),
+          title: 'Flutter',
+          text: 'ເຄື່ອງມືທີ່ຂ້ອຍສາມາດໃຊ້ໄດ້',
         },
         {
-          img: require('@/assets/images/icon1.png'),
-          title: 'Dados Seguros',
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+          img: require('@/assets/images/icons-nuxt.png'),
+          title: 'Nuxt js',
+          text: 'ເຄື່ອງມືທີ່ຂ້ອຍສາມາດໃຊ້ໄດ້',
         },
         {
-          img: require('@/assets/images/icon3.png'),
-          title: 'Código Aberto',
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+          img: require('@/assets/images/icons-vue.png'),
+          title: 'Vue js',
+          text: 'ເຄື່ອງມືທີ່ຂ້ອຍສາມາດໃຊ້ໄດ້',
         },
       ],
     }

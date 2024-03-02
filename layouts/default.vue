@@ -9,7 +9,6 @@
       app
       :clipped="clipped"
     >
-
       <v-list class="mx-2" v-if="drawer === true">
         <v-list-item>
           <v-list-item-content>
@@ -72,6 +71,7 @@
         <Nuxt />
       </div>
     </v-main>
+    <foot />
     <v-btn
       v-show="fab"
       v-scroll="onScroll"
@@ -105,8 +105,11 @@
 }
 </style>
 <script>
+import foot from '../components/footer.vue'
 export default {
+  components: { foot },
   name: 'DefaultLayout',
+
   data() {
     return {
       clipped: false,

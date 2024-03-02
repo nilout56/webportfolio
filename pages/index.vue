@@ -1,5 +1,5 @@
 <template>
-  <v-row class="d-flex justify-center mt-4 ml-2">
+  <v-row class="d-flex justify-center mt-4 ml-2 mb-6">
     <v-container fluid class="mt-4 mb-8">
       <v-row class="pa-0 justify-end">
         <v-col cols="12">
@@ -25,6 +25,10 @@
     </v-container>
 
     <cardhover />
+
+    <div>
+      <detailss />
+    </div>
 
     <v-container
       max-width="auto"
@@ -53,6 +57,7 @@
         </v-row>
       </v-parallax>
     </v-container>
+    <v-container></v-container>
   </v-row>
 </template>
 
@@ -61,8 +66,9 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import cardhover from '../components/hovercard/cardhover.vue'
 import spacebutton from '../components/buttons/spacebutton.vue'
+import detailss from '../components/me.vue'
 export default {
-  components: { cardhover, spacebutton },
+  components: { cardhover, spacebutton, detailss },
   data() {
     return {
       loading: false,
