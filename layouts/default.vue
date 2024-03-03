@@ -97,7 +97,7 @@
 .v-navigation-drawer >>> .v-navigation-drawer__border {
   display: none;
 }
-.main {
+.v-main {
   background-image: url('~/assets/images/bgMain.png');
   background-attachment: fixed;
   background-position: center;
