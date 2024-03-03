@@ -58,10 +58,17 @@
               Follow And Make Your Dream❤️!
             </h4>
           </v-col>
+          <div class="svg-border-waves">
+            <img src="@/assets/images/borderWaves.svg" />
+          </div>
+          <div class="svg-border-waves">
+            <img src="@/assets/images/borderWavesBlue.svg" />
+          </div>
         </v-row>
       </v-parallax>
     </v-container>
-    <v-container></v-container>
+
+    <v-container> </v-container>
   </v-row>
 </template>
 
@@ -303,8 +310,8 @@ export default {
 }
 .planet {
   display: block;
-  width: 125px;
-  height: 125px;
+  width: 50px;
+  height: 55px;
   position: relative;
   transform-style: preserve-3d;
   border-radius: 50%;

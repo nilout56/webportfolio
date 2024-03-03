@@ -24,6 +24,9 @@
         {{ new Date().getFullYear() }} — <strong>Nilout</strong>
       </v-card-text>
     </v-card>
+    <div class="svg-border-waves">
+      <img src="@/assets/images/borderWavesBlue.svg" />
+    </div>
   </v-footer>
 </template>
 

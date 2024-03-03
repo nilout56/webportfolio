@@ -8,26 +8,25 @@
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
-            <v-col cols="12" md="6" xl="8">
-              <spacebutton />
-            </v-col>
+            <v-col cols="12" md="6" xl="8"> <spacebutton /> </v-col>
+
             <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down">
               <h1 class="display-2 font-weight-bold mb-4">WHO AM I?</h1>
               <h1 class="font-weight-light">
                 I'm Nilout Stls, a developer / Programmer / Engineer Hi there!
-                My name is Nilout. I'm studying at the National University of
-                Laos, Department of Computer Engineering and Information
-                Technology. I have been very passionate about computers and
-                programming since my university days. I dream to be an expert
-                software engineer so that I can build professional and useful
-                software that has business value.
+                I'm studying at the National University of Laos, Department of
+                Computer Engineering and Information Technology. I have been
+                very passionate about computers and programming since my
+                university days. I dream to be an expert software engineer so
+                that I can build professional and useful software that has
+                business value.
               </h1>
             </v-col>
           </v-row>
         </v-col>
       </v-row>
       <div class="svg-border-waves text-white">
-        <v-img src="@/assets/images/borderWaves.svg" />
+        <img src="@/assets/images/borderWaves.svg" />
       </div>
     </v-parallax>
     <v-container fluid id="features" class="mt-2">
