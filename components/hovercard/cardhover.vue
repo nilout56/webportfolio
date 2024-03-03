@@ -59,8 +59,8 @@
                     class="d-block ml-auto mr-auto"
                     :class="{ 'zoom-efect': hover }"
                   ></v-img>
-                  <h1 class="font-weight-regular">{{ feature.title }}</h1>
-                  <h4 class="font-weight-regular subtitle-1">
+                  <h1>{{ feature.title }}</h1>
+                  <h4>
                     {{ feature.text }}
                   </h4>
                 </v-card>

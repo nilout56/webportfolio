@@ -155,7 +155,7 @@ export default {
 }
 .dino {
   margin: 0 auto;
-  background-image: url('~@/assets/images/icons-flutter.png');
+  background-image: url('~@/assets/images/meeee.jpeg');
   border-radius: 50px;
   background-size: contain;
   width: 75px;

@@ -89,6 +89,12 @@
   </v-app>
 </template>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao+Looped:wght@200&family=Noto+Sans+Lao:wght@200;400&display=swap');
+* {
+  /* font-family: 'Noto Sans Lao', sans-serif; */
+  font-family: 'Noto Sans Lao Looped', sans-serif;
+  font-weight: 500;
+}
 .blue--text {
   color: white !important;
   background: linear-gradient(90deg, #14746f 2.23%, #67b99a 100%);
