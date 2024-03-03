@@ -90,6 +90,7 @@
 </template>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao+Looped:wght@200&family=Noto+Sans+Lao:wght@200;400&display=swap');
+
 * {
   /* font-family: 'Noto Sans Lao', sans-serif; */
   font-family: 'Noto Sans Lao Looped', sans-serif;
@@ -104,7 +105,7 @@
   display: none;
 }
 .v-main {
-  background-image: url('~/assets/images/bgMain.png');
+  background-image: url('@/assets/images/bgMain.png');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
