@@ -51,7 +51,7 @@
         <v-row align="center" justify="center">
           <v-col class="text-center" cols="12">
             <h1 class="text-h4 font-weight-thin mb-4" data-aos="zoom-out-down">
-              Never Stop Learning
+              Never Stop Learning derrrrrrrrrrrrrrr
             </h1>
             <spin />
             <h4 class="subheading" data-aos="zoom-out">
